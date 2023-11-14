@@ -30,7 +30,10 @@ Navigator.pushReplacement(
 Pada form di tugas ini, saya menggunakan elemen`TextFormField`. Elemen tersebut memiliki kegunaan yang sama dengan `TextField`, yaitu menerima input teks dari user. Namun, saya lebih memilih menggunakan `TextFormField` agar dapat memvalidasi input user dengan lebih mudah, karena elemen tersebut memiliki `validator` yang merupakan built-in untuk validasi
 
 ### Bagaimana penerapan clean architecture pada aplikasi Flutter?
-Penerapan *clean architecture* pada Flutter berkaitan dengan pemisahan aplikasi menjadi beberapa *layer* berdasarkan suatu prinsip. Ada 3 *layer* utama dalam arsitektur ini, yaitu **Data Layer** yang bertanggung jawab terhadap pengambilan data, **Domain Layer** yang berkaitan dengan logika aplikasi dan model data, serta **Feature Layer** yang berisi UI dan *event handler*-nya. Selain itu, ada juga dua *supporting layer*, yaitu **Resources** dan **Shared Library** yang dapat diakses oleh *layer* lainnya
+Penerapan *clean architecture* pada Flutter berkaitan dengan pemisahan aplikasi menjadi beberapa *layer* berdasarkan suatu prinsip. Ada 3 *layer* utama dalam arsitektur ini:
+1. **Data Layer** yang bertanggung jawab terhadap pengambilan data
+2. **Domain Layer** yang berkaitan dengan logika aplikasi dan model data
+3. **Feature Layer** yang berisi UI dan *event handler*-nya. Selain itu, ada juga dua *supporting layer*, yaitu **Resources** dan **Shared Library** yang dapat diakses oleh *layer* lainnya
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
 1. Membuat direktori baru bernama `widgets` dan `screens`. Kemudian pindahkan file `menu.dart` ke folder `screens`
