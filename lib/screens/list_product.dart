@@ -1,3 +1,4 @@
+import 'package:booklyn/screens/detail_product.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -61,29 +62,42 @@ Widget build(BuildContext context) {
                 } else {
                     return ListView.builder(
                         itemCount: snapshot.data!.length,
-                        itemBuilder: (_, index) => Container(
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 12),
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                    Text(
-                                    "${snapshot.data![index].fields.name}",
-                                    style: const TextStyle(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold,
-                                    ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Text("${snapshot.data![index].fields.price}"),
-                                    const SizedBox(height: 10),
-                                    Text(
-                                        "${snapshot.data![index].fields.description}")
-                                ],
+                        itemBuilder: (_, index) => GestureDetector (
+                          onTap: () {
+                          // Navigasi ke halaman detail produk saat item diklik
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProductDetailPage(
+                                product: snapshot.data![index],
+                              ),
+                            ),
+                          );
+                        },
+                        
+                        child: Container(
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 12),
+                              padding: const EdgeInsets.all(20.0),
+                              child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "${snapshot.data![index].fields.name}",
+                                  style: const TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                            ));
+                                const SizedBox(height: 10),
+                                Text("${snapshot.data![index].fields.price}"),
+                                const SizedBox(height: 10),
+                                Text("${snapshot.data![index].fields.description}"),
+                              ],
+                          )
+                        ),
+                      ));
                     }
                 }
             }));
